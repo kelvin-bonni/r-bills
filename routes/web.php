@@ -24,4 +24,6 @@ Route::group(['prefix' => 'rates', 'as' => 'rates.'], function() {
     Route::post('upload',['as' => 'upload', 'uses' => 'RatesController@upload']);
 });
 
-
+Route::get('/invoice', function () {
+    return view('rates.invoice');
+})->name('rates.invoice');
