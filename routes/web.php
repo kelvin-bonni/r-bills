@@ -21,8 +21,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::group(['prefix' => 'rates', 'as' => 'rates.'], function() {
     Route::get('download/{filename}',['as' => 'download', 'uses' => 'RatesController@download']);
-    Route::get('show/import',['as' => 'show.import', 'uses' => 'RatesController@showImport']);
-    Route::post('import',['as' => 'import', 'uses' => 'RatesController@import']);
+    Route::post('upload',['as' => 'upload', 'uses' => 'RatesController@upload']);
 });
 
 
