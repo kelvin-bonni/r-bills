@@ -21,8 +21,8 @@
                         </div>
                     @endif
 
-                    @foreach($resultArray as $array)
-                        {{$array['company']}}
+                    @for($i = 0; $i < sizeof($companyGrouping); $i++)
+                        {{$companyGroupingKeys[$i]}}
                             <table class="tg">
                                 <tr>
                                     <th class="tg-73oq">Employee ID</th>
@@ -30,7 +30,7 @@
                                     <th class="tg-73oq">Unit Price</th>
                                     <th class="tg-73oq">Cost</th>
                                 </tr>
-                                @foreach($array as $innerArray)
+                                @foreach($companyGrouping[$companyGroupingKeys[$i]] as $innerArray)
                                     <tr>
                                         <td class="tg-0lax">{{$innerArray['employee_id']}}</td>
                                         <td class="tg-0lax">{{$innerArray['number_of_hours']}}</td>
@@ -39,7 +39,7 @@
                                     </tr>
                                 @endforeach
                             </table>
-                    @endforeach
+                    @endfor
                 </div>
             </div>
         </div>
